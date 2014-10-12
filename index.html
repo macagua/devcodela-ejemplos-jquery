@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-2.1.1.min.js"></script>
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+	<script>
+		$(document).ready(function() {
+			$(".clasesita").mouseover(function(event) {
+				alert("Estas seleccionando un class CSS básico");
+			});
+
+			$("#idesito").mouseover(function(event) {
+				alert("Estas seleccionando un ID CSS básico");
+			});
+			
+			$("p").mouseover(function(event) {
+				alert("Estas seleccionando un elemento HTML básico");
+			});
+
+			$(".clasesita-avanzada div").mouseover(function(event) {
+				alert("Estas usando selectores avanzados");
+			});
+
+			$(".clase > h1").mouseover(function(event) {
+				alert("Estas usando XPath");
+			});
+
+			function mostrar() {
+				alert("Estas usando selectores adyacentes");
+			}
+
+			$("div + h2").on("mouseover", mostrar);
+		});
+	</script>
+	<style type="text/css">
+		body {
+			font-family: Calibri;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		.clasesita, #idesito, p {
+			margin-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			width: 100px;
+			height: 20px;
+			border-radius: 3px;
+		}
+
+		.clasesita {
+			background-color: red;
+		}
+
+		.clasesita-avanzada div {
+			background-color: purple;
+			width: 10px;
+			height: 10px;
+		}
+
+		#idesito {
+			background-color: yellow;
+		}
+
+		p {
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="clasesita">
+	</div>
+
+	<div class="clasesita-avanzada">
+		<div></div>
+	</div>
+	
+	<div id="idesito"></div>
+	
+	<p></p>
+	
+	<div class="clase">
+		<h1>Hola 1</h1>
+	</div>
+	<h2>Hola 2</h2>	
+</body>
+</html>
